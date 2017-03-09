@@ -2,6 +2,21 @@
 
 > An electron-vue project
 
+Road map:
+
+* [ ] construct vuex
+  * [ ] test vuex
+  * [ ] start test dragNdrop
+  * [x] show content in console
+  * [ ] show content in presentVue
+  * [ ] link presentVue index with column
+  * [ ] construct modal 
+  * [ ] add photon as tool bar
+  * [ ] toggle mode and flag
+  * [ ] clear all
+  * [ ] remove selected
+  * [ ] ​
+
 ## Build Setup
 
 ``` bash
