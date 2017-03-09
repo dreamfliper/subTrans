@@ -13,7 +13,7 @@
     "pack": "npm run pack:main && npm run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack -p --progress --colors --config webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack -p --progress --colors --config webpack.renderer.config.js",
-    "postinstall": "cd app && npm install"
+    "postinstall": "cd app && npm install && ./app/node_modules/.bin/electron-rebuild"
   },
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
   "license": "MIT",
