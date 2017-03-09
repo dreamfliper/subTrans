@@ -1,0 +1,17 @@
+{
+  "name": "mashingopencc",
+  "version": "0.0.0",
+  "description": "An electron-vue project",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "opencc": "^1.0.4",
+    "vue": "^2.1.10",
+    "vue-blu": "^0.1.9",
+    "vue-electron": "^1.0.6",
+    "vuex": "^2.1.1"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.5.7"
+  },
+  "author": "Henpai Hsu <dreamfliper@gmail.com>"
+}
