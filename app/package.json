@@ -4,7 +4,7 @@
   "description": "An electron-vue project",
   "main": "./dist/main.js",
   "dependencies": {
-    "opencc": "^1.0.4",
+    "opencc": "=1.0.4",
     "vue": "^2.1.10",
     "vue-blu": "^0.1.9",
     "vue-electron": "^1.0.6",
