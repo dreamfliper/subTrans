@@ -13,6 +13,7 @@ opencc.convert("汉字", (err, converted) => {
 
 Vue.use(Electron)
 Vue.use(VueBlu)
+Vue.use(Vuex)
 Vue.config.debug = true
 
 import App from './App'
