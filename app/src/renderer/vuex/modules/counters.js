@@ -2,11 +2,12 @@ import * as types from '../mutation-types'
 
 const state = {
   main: 0,
+  selected: 0,
   mode: 's2tw',
   pflag: false,
   files: [
-  { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
-  { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
+    { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
+    { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
   ]
 }
 
@@ -24,9 +25,10 @@ const mutations = {
     state.pflag = !state.pflag
   },
   [types.ADD_FILE] (state, payload) {
-    state.files=payload.name
-    state.files=payload.add
-    state.files=payload.content
+    state.files.push(payload)//payload{name:'',add:'',content:''}
+  },
+  [types.CHANGE_SELECTED] (state, index) {
+    state.selected=index
   },
   [types.REMOVE_FILE] (state, index) {
     state.files.splice(index, 1)
@@ -34,6 +36,9 @@ const mutations = {
   [types.REMOVE_ALL_FILE] (state) {
     state.files.splice(0,state.files.length)
     state.main=0
+  },
+  [types.UPDATE_CONTENT] (state, payloadstr) {
+    state.files[state.selected].content=payloadstr
   },
 }
 

@@ -1,9 +1,9 @@
 <template>
   <div>
     <img src="./LandingPageView/assets/logo.png" alt="electron-vue">
-    <contentvue></contentvue>
     <h1>Welcome.</h1>
     <tablevue></tablevue>
+    <contentvue></contentvue>
     <versions></versions>
     <links></links>
   </div>

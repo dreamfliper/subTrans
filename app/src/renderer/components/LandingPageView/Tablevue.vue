@@ -3,7 +3,7 @@
     <column label="姓名" field="name"></column>
     <column label="工号" field="work_no"></column>
     <column label="生日" field="birthday"></column>
-    <column label="Email" field="email"></column>
+    <column label="Email"field="email"></column>
     <column label="性别" field="gender"></column>
     <column label="成绩" field="achievement"></column>
   <tag type="primary">{{getpflag}}</tag>

@@ -1,3 +1,17 @@
+import {mapGetters, mapState, mapMutations} from 'vuex'
+import store from 'renderer/vuex/store'
+mapMutations([
+   'DECREMENT_MAIN_COUNTER',
+   'INCREMENT_MAIN_COUNTER',
+   'CHANGE_MODE',
+   'TOGGLE_PFLAG',
+   'ADD_FILE',
+   'CHANGE_SELECTED',
+   'REMOVE_FILE',
+   'REMOVE_ALL_FILE',
+   'UPDATE_CONTENT',
+ ])
+
 document.ondragover = document.ondrop = (ev) => {
   ev.preventDefault()
 }
@@ -6,6 +20,11 @@ document.body.ondrop = (ev) => {
   ev.preventDefault()
   for(var index in ev.dataTransfer.files){
     if (index !== 'length' && index!=='item') {
+      store.commit('ADD_FILE',{
+        name:ev.dataTransfer.files[index].name,
+        add :ev.dataTransfer.files[index].path,
+        content:''})
+      store.commit('CHANGE_SELECTED',2)
       // store.files.push(
       //   {name:ev.dataTransfer.files[index].name,
       //     add:ev.dataTransfer.files[index].path,
@@ -40,6 +59,7 @@ function updateProgress(evt) {
 
 function loaded(evt) {
   console.log(evt.currentTarget.result)
+  store.commit('UPDATE_CONTENT',evt.currentTarget.result)
   // store.files[totalfiles].text=evt.currentTarget.result
   // totalfiles++
 }

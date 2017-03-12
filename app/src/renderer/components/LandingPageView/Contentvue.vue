@@ -1,9 +1,9 @@
 <template>
 	<modal 
-	:is-show="getpflag" @close="toggle_pflag"
+	:is-show="getpflag" @close="TOGGLE_PFLAG"
 	title="Modal!" :width="520" transition="slideUp">
 	  <h4>Text in a modal</h4>
-	  <pre>{{getMode}}</pre>
+	  <pre>{{getContent}}</pre>
 	</modal>
 </template>
 
@@ -23,16 +23,16 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 	    ]),
   	},
     methods: {
-     ...mapMutations({
-      decrement_main_counter:'DECREMENT_MAIN_COUNTER',
-      increment_main_counter:'INCREMENT_MAIN_COUNTER',
-      change_mode           :'CHANGE_MODE',
-      toggle_pflag          :'TOGGLE_PFLAG',
-      add_file              :'ADD_FILE',
-      remove_file           :'REMOVE_FILE',
-      remove_all_file       :'REMOVE_ALL_FILE',
-      update_content        :'UPDATE_CONTENT',
-    }),
+     ...mapMutations([
+      'DECREMENT_MAIN_COUNTER',
+      'INCREMENT_MAIN_COUNTER',
+      'CHANGE_MODE',
+      'TOGGLE_PFLAG',
+      'ADD_FILE',
+      'REMOVE_FILE',
+      'REMOVE_ALL_FILE',
+      'UPDATE_CONTENT',
+    ]),
 		 slideUp() {
 	      this.$modal.open({
 	        autoClose: 3,

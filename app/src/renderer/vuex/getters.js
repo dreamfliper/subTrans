@@ -3,4 +3,5 @@ export const getMode 		= state => state.counters.mode
 export const getpflag 		= state => state.counters.pflag
 export const getFileAmount  = state => state.counters.files.length
 export const getFiles  		= state => state.counters.files
-export const getContent 	= (state,index) => state.counters.files[index].content
+export const getSelected 	= state => state.counters.selected
+export const getContent 	= (state, getters) => state.counters.files[getters.getSelected].content
