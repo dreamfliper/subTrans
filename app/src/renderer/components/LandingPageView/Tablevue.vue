@@ -7,7 +7,7 @@
     <column label="性别" field="gender"></column>
     <column label="成绩" field="achievement"></column>
   <tag type="primary">{{getpflag}}</tag>
-  <a class="button is-success" @click="TOGGLE_PFLAG">Success</a>
+  <a class="button is-success" @click="toggle_pflag">Success</a>
   </data-table>
 </template>
 
