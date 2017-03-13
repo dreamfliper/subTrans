@@ -1,9 +1,9 @@
 <template>
 	<modal 
 	:is-show="getpflag" @close="TOGGLE_PFLAG"
-	title="Modal!" :width="520" transition="slideUp">
+	title="Content Preview" :width="520" transition="slideUp">
 	  <h4>Text in a modal</h4>
-	  <pre>{{getContent}}</pre>
+	  <pre class="has-text-left">{{getContent}}</pre>
 	</modal>
 </template>
 
@@ -19,7 +19,8 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 	    	'getMode',
 	    	'getpflag',
 	    	'getFileAmount',
-	    	'getContent'
+	    	'getContent',
+	    	'getSelected'
 	    ]),
   	},
     methods: {

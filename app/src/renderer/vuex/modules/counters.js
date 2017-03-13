@@ -6,8 +6,8 @@ const state = {
   mode: 's2tw',
   pflag: false,
   files: [
-    { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
-    { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
+    { index:0 ,name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
+    { index:1 ,name: 'Learn Vue' ,add:'sample2',content:'sample2'},
   ]
 }
 

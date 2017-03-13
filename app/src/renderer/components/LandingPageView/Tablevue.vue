@@ -1,11 +1,17 @@
 <template>
   <data-table :data="getFiles" :striped=true>
-    <column label="姓名" field="name"></column>
-    <column label="工号" field="work_no"></column>
-    <column label="生日" field="birthday"></column>
-    <column label="Email"field="email"></column>
-    <column label="性别" field="gender"></column>
-    <column label="成绩" field="achievement"></column>
+    <column label="#" field="index" :width='5'></column>
+    <column label="姓名">
+      <template scope="row">
+        <span @click="change_selected(row.index)">{{ row.name }}</span>
+      </template>
+    </column>
+    <column label="address" :width='400'>
+      <template scope="row">
+        <tag id="add" type="primary" @click="change_selected(row.index)">{{ row.add }}</tag>
+      </template>
+    </column>
+    <!-- <column label="address" field="add" :width='400'></column> -->
   <tag type="primary">{{getpflag}}</tag>
   <a class="button is-success" @click="toggle_pflag">Success</a>
   </data-table>
@@ -34,6 +40,7 @@ export default {
       change_mode           :'CHANGE_MODE',
       toggle_pflag          :'TOGGLE_PFLAG',
       add_file              :'ADD_FILE',
+      change_selected       :'CHANGE_SELECTED',
       remove_file           :'REMOVE_FILE',
       remove_all_file       :'REMOVE_ALL_FILE',
       update_content        :'UPDATE_CONTENT',
@@ -48,4 +55,8 @@ export default {
 </script>
 
 <style scoped>
+#add{
+  text-align: start;
+  width: 380px;
+}
 </style>
