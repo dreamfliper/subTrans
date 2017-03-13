@@ -1,5 +1,5 @@
 <template>
-  <data-table id="maintable" :data="getFiles" :striped=true >
+  <data-table id="maintable" :data="getFiles" :striped=true :height="viewheight">
     <column label="#" field="index" :width='5'></column>
     <column label="姓名">
       <template scope="row">
@@ -49,10 +49,11 @@ export default {
   data (){
     return {
         // dataSource2:files
+        viewheight:window.innerHeight*0.45
       }
    }
   }
-// console.log('tablevue debug message:'+mode())
+// console.log('tablevue debug message:'+window.innerHeight)
 </script>
 
 <style scoped>

@@ -1,9 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 * {
-/*   padding: 0px;
-  margin: 0px;
- */  flex-grow: 1;
+  flex-grow: 1;
 }
 
 html,
