@@ -2,12 +2,12 @@
   <data-table show-index id="maintable" :data="getFiles" :striped=true :height="viewheight">
     <column label="姓名" :width='200'>
       <template scope="row">
-        <span @click="change_selected(row.index)">{{ row.name }}</span>
+        <p is-fullwidth @click="change_selected(row.index)">{{ row.name }}</p>
       </template>
     </column>
     <column label="address">
       <template scope="row">
-        <span type="primary" @click="change_selected(row.index)">{{ row.add }}</span>
+        <p is-fullwidth @click="change_selected(row.index)">{{ row.add }}</p>
       </template>
     </column>
   <tag type="primary">{{getpflag}}</tag>
