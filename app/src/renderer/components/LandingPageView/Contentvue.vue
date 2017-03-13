@@ -2,7 +2,7 @@
 	<modal 
 	:is-show="getpflag" @close="TOGGLE_PFLAG"
 	title="Content Preview" :width="520" transition="slideUp">
-	  <h4>Text in a modal</h4>
+	  <h4>{{getFileName}}</h4>
 	  <pre class="has-text-left">{{getContent}}</pre>
 	</modal>
 </template>
@@ -16,6 +16,7 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
   	computed: { 
   		...mapGetters([
 	    	'getFiles',
+	    	'getFileName',
 	    	'getMode',
 	    	'getpflag',
 	    	'getFileAmount',

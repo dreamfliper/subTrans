@@ -8,7 +8,7 @@
     </column>
     <column label="address" :width='400'>
       <template scope="row">
-        <tag id="add" type="primary" @click="change_selected(row.index)">{{ row.add }}</tag>
+        <span id="add" type="primary" @click="change_selected(row.index)">{{ row.add }}</span>
       </template>
     </column>
     <!-- <column label="address" field="add" :width='400'></column> -->
@@ -28,6 +28,7 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 export default {
   computed: mapGetters([
     'getFiles',
+    'getFileName',
     'getMode',
     'getpflag',
     'getFileAmount',
@@ -55,8 +56,4 @@ export default {
 </script>
 
 <style scoped>
-#add{
-  text-align: start;
-  width: 380px;
-}
 </style>
