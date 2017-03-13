@@ -1,16 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 * {
-  margin: 0;
-  padding: 0;
-  flex-grow: 1;
+/*   padding: 0px;
+  margin: 0px;
+ */  flex-grow: 1;
 }
 
 html,
 body { height: 100%; }
 
 body {
-  align-items: center;
+  align-items: stretch;
+  align-content: stretch;
+  flex-direction: column;
   background:
     radial-gradient(
       ellipse at center,
@@ -23,3 +25,6 @@ body {
   justify-content: center;
   text-align: center;
 }
+/* #maintable{
+  margin: 0px 5%;
+} */

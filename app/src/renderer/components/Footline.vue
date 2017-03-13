@@ -1,7 +1,7 @@
 <template>
-	<footer class="toolbar toolbar-footer">
+	<footer id="footline" class="toolbar toolbar-footer">
 	  <div class="toolbar-actions">
-	    <button class="btn btn-default">
+	    <button class="btn btn-default pull-left">
 	      Cancel
 	    </button>
 

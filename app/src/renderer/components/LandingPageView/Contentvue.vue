@@ -46,3 +46,5 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 	  }
   }
 </script>
+
+<style scoped></style>

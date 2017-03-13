@@ -1,17 +1,16 @@
 <template>
-  <data-table :data="getFiles" :striped=true>
+  <data-table id="maintable" :data="getFiles" :striped=true>
     <column label="#" field="index" :width='5'></column>
     <column label="姓名">
       <template scope="row">
         <span @click="change_selected(row.index)">{{ row.name }}</span>
       </template>
     </column>
-    <column label="address" :width='400'>
+    <column label="address" :width='450'>
       <template scope="row">
         <span id="add" type="primary" @click="change_selected(row.index)">{{ row.add }}</span>
       </template>
     </column>
-    <!-- <column label="address" field="add" :width='400'></column> -->
   <tag type="primary">{{getpflag}}</tag>
   <a class="button is-success" @click="toggle_pflag">Success</a>
   </data-table>
@@ -55,3 +54,9 @@ export default {
   }
 // console.log('tablevue debug message:'+mode())
 </script>
+
+<style scoped>
+#maintable{
+  margin: 0 5%;
+}
+</style>

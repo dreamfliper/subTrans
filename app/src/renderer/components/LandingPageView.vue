@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="landing">
     <img src="./LandingPageView/assets/logo.png" alt="electron-vue">
     <h1>Welcome.</h1>
     <tablevue></tablevue>
@@ -30,5 +30,8 @@
   img {
     margin-top: -25px;
     width: 450px;
+  }
+  #landing{
+    align-self:stretch;
   }
 </style>
