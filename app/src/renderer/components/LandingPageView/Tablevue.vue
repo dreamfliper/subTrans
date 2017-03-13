@@ -1,5 +1,5 @@
 <template>
-  <data-table id="maintable" :data="getFiles" :striped=true>
+  <data-table id="maintable" :data="getFiles" :striped=true >
     <column label="#" field="index" :width='5'></column>
     <column label="姓名">
       <template scope="row">

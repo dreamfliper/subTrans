@@ -9,10 +9,13 @@
 html,
 body { height: 100%; }
 
-body {
-  align-items: stretch;
-  align-content: stretch;
+#landing{
+  display: flex;
   flex-direction: column;
+}
+
+body {
+  // align-content: stretch;
   background:
     radial-gradient(
       ellipse at center,
@@ -20,9 +23,8 @@ body {
       rgba(229, 229, 229, .85) 100%
     );
   background-position: center;
-  display: flex;
   font-family: Lato, Helvetica, sans-serif;
-  justify-content: center;
+  // justify-content: center;
   text-align: center;
 }
 /* #maintable{
