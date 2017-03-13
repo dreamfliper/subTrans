@@ -4,18 +4,33 @@
 
 Road map:
 
-* [ ] construct vuex
-  * [ ] test vuex
-  * [ ] start test dragNdrop
-  * [x] show content in console
-  * [ ] show content in presentVue
-  * [ ] link presentVue index with column
-  * [ ] construct modal 
-  * [ ] add photon as tool bar
-  * [ ] toggle mode and flag
-  * [ ] clear all
-  * [ ] remove selected
-  * [ ] ​
+- [x] construct vuex
+
+- [x] test vuex
+
+- [x] start test dragNdrop
+
+- [x] show content in console
+
+- [x] show content in presentVue
+
+- [x] link presentVue index with column
+
+- [x] construct modal 
+
+- [x] add photon as tool bar
+
+- [ ] toggle mode and flag
+
+- [ ] clear all
+
+- [ ] remove selected
+
+- [ ] prettify hight
+
+        ​
+
+        ​
 
 ## Build Setup
 
