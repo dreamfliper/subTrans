@@ -1,16 +1,22 @@
 <template>
   <div id="#app">
-    <landing-page></landing-page>
+    <Toolbar></Toolbar>
+      <landing-page></landing-page>
+    <Footline></Footline>
   </div>
 </template>
 
 <script>
   import LandingPage from 'components/LandingPageView'
+  import Toolbar from 'components/Toolbar'
+  import Footline from 'components/Footline'
   import store from 'renderer/vuex/store'
   import './dragNdrop'
   export default {
     components: {
-      LandingPage
+      LandingPage,
+      Toolbar,
+      Footline
     },
     store
   }

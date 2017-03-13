@@ -14,12 +14,13 @@
   import Versions from './LandingPageView/Versions'
   import Tablevue from './LandingPageView/Tablevue'
   import Contentvue from './LandingPageView/Contentvue'
+
   export default {
     components: {
       Links,
       Versions,
       Tablevue,
-      Contentvue
+      Contentvue,
     },
     name: 'landing-page'
   }

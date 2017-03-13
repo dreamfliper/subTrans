@@ -13,6 +13,7 @@
 import {mapGetters, mapState, mapMutations} from 'vuex'
 
   export default {
+  	name: 'content-vue',
   	computed: { 
   		...mapGetters([
 	    	'getFiles',
@@ -45,9 +46,3 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 	  }
   }
 </script>
-
-
-
-
-<style scoped>
-</style>

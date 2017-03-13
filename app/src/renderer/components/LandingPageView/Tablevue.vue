@@ -26,6 +26,7 @@ import {mapGetters, mapState, mapMutations} from 'vuex'
 //   ]
 
 export default {
+  name:'table-vue',
   computed: mapGetters([
     'getFiles',
     'getFileName',
@@ -54,6 +55,3 @@ export default {
   }
 // console.log('tablevue debug message:'+mode())
 </script>
-
-<style scoped>
-</style>
