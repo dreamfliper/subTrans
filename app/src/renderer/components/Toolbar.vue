@@ -2,31 +2,25 @@
 	<header class="toolbar toolbar-header">
 	  <h1 class="title">Header with actions</h1>
 
-	  <div class="toolbar-actions">
+	  <div class="toolbar-actions ">
 	    <div class="btn-group">
-	      <button class="btn btn-default">
-	        <span class="icon icon-home"></span>
+	      <button class="btn btn-default btn-large ">
+				簡
 	      </button>
-	      <button class="btn btn-default">
-	        <span class="icon icon-folder"></span>
+	      <button class="btn btn-default btn-large ">
+	        <span class="icon icon-right-bold"></span>
 	      </button>
-	      <button class="btn btn-default active">
-	        <span class="icon icon-cloud"></span>
-	      </button>
-	      <button class="btn btn-default">
-	        <span class="icon icon-popup"></span>
-	      </button>
-	      <button class="btn btn-default">
-	        <span class="icon icon-shuffle"></span>
+	      <button class="btn btn-default btn-large ">
+	       繁
 	      </button>
 	    </div>
-
-	    <button class="btn btn-default">
-	      <span class="icon icon-home icon-text"></span>
-	      Filters
+	    <button class="btn btn-default btn-large">
+	    	激光
+	      <span class="icon icon-arrows-ccw icon-text"></span>
+	      雷射
 	    </button>
 
-	    <button class="btn btn-default btn-dropdown pull-right">
+	    <button class="btn btn-default btn-dropdown absolute-right">
 	      <span class="icon icon-megaphone"></span>
 	    </button>
 	  </div>

@@ -47,7 +47,7 @@ export default {
   data (){
     return {
         // dataSource2:files
-        viewheight:window.innerHeight-296
+        viewheight:window.innerHeight-315
       }
    }
   }

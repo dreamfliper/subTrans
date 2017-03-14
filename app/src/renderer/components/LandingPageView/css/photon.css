@@ -222,6 +222,16 @@ h6 {
   text-align: left;
 }
 
+.absolute-right{
+  position: absolute;;
+  right: 5px;
+}
+
+.absolute-left{
+  position: absolute;;
+  left: 5px;
+}
+
 .pull-left {
   float: left;
 }
@@ -316,7 +326,7 @@ h6 {
   display: inline-block;
   padding: 3px 8px;
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   text-align: center;
   white-space: nowrap;
@@ -431,13 +441,14 @@ h6 {
 }
 
 .btn .icon {
-  float: left;
+  /* float: left; */
+  line-height:100px;
   width: 14px;
   height: 14px;
   margin-top: 1px;
   margin-bottom: 1px;
   color: #737475;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1;
 }
 
@@ -515,6 +526,13 @@ h6 {
 }
 .toolbar:after {
   clear: both;
+}
+
+.flex-sapce-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .toolbar-header {

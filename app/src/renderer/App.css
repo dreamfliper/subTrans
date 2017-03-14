@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
-* {
-  flex-grow: 1;
-}
-
 html,
 body { height: 100%; }
 
@@ -14,6 +10,7 @@ body { height: 100%; }
 
 body {
   // align-content: stretch;
+  font-size: 16px;
   background:
     radial-gradient(
       ellipse at center,
@@ -25,6 +22,3 @@ body {
   // justify-content: center;
   text-align: center;
 }
-/* #maintable{
-  margin: 0px 5%;
-} */
