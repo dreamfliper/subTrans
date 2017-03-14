@@ -2,7 +2,7 @@
 	<header class="toolbar toolbar-header">
 	  <h1 class="title">Header with actions</h1>
 
-	  <div class="toolbar-actions ">
+	  <div class="toolbar-actions flex-sapce-between">
 	    <div class="btn-group">
 	      <button class="btn btn-default btn-large ">
 				簡
