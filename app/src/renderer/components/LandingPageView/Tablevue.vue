@@ -2,12 +2,12 @@
   <data-table show-index id="maintable" :data="getFiles" :striped=true :height="viewheight">
     <column label="姓名" :width='200'>
       <template scope="row">
-        <p is-fullwidth @click="change_selected(row.index)">{{ row.name }}</p>
+        <p class="pointercursor" is-fullwidth @click="change_selected(row.index)">{{ row.name }}</p>
       </template>
     </column>
     <column label="address">
       <template scope="row">
-        <p is-fullwidth @click="change_selected(row.index)">{{ row.add }}</p>
+        <p class="pointercursor" is-fullwidth @click="change_selected(row.index)">{{ row.add }}</p>
       </template>
     </column>
   <tag type="primary">{{getpflag}}</tag>
@@ -55,6 +55,9 @@ console.log('tablevue debug message:'+window)
 </script>
 
 <style scoped>
+.pointercursor{
+  cursor: pointer;
+}
 #maintable{
   margin: 0 5%;
 }

@@ -4,13 +4,13 @@
 
 	  <div class="toolbar-actions flex-sapce-between">
 	    <div class="btn-group">
-	      <button class="btn btn-default btn-large ">
+	      <button class="btn btn-default btn-large is-disabled">
 				簡
 	      </button>
 	      <button class="btn btn-default btn-large ">
 	        <span class="icon icon-right-bold"></span>
 	      </button>
-	      <button class="btn btn-default btn-large ">
+	      <button class="btn btn-default btn-large is-disabled nocursor">
 	       繁
 	      </button>
 	    </div>
