@@ -8,6 +8,7 @@
     links
 </template>
 
+
 <script>
   import Links from './LandingPageView/Links'
   import Versions from './LandingPageView/Versions'
@@ -25,6 +26,7 @@
     name: 'landing-page'
   }
 </script>
+
 
 <style scoped>
   img {

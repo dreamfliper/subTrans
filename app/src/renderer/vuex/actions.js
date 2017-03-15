@@ -10,5 +10,5 @@ export const incrementMain = ({ commit }) => {
 
 export const showclicked = ({ commit },index) => {
   commit(types.CHANGE_SELECTED,index)
-  commit(types.TOGGLE_PFLAG)
+  commit(types.TOGGLE_SHOWMODAL)
 }

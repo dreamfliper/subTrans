@@ -7,19 +7,19 @@
 					.nocursor 簡
 				button.btn.btn-default.btn-large
 					.icon.icon-right-bold(
-						v-if="s2t",
-						@click="s2t=!s2t"
+						v-if="getMode==='s2tw'",
+						@click="change_mode"
 					)
 					.icon.icon-left-bold(
-						v-if="!s2t",
-						@click="s2t=!s2t"
+						v-if="getMode==='tw2s'",
+						@click="change_mode"
 					)
 				button.btn.btn-default.btn-large.nocursor
 					.nocursor 繁
 
 			button.btn.btn-default.btn-large(
-				:class="{ active: isActive }",
-				@click="isActive=!isActive"
+				:class="{ active: getpflag }",
+				@click="toggle_pflag"
 			)
 				|激光
 				|
@@ -30,19 +30,43 @@
 				.icon.icon-megaphone
 </template>
 
-<script>
-	import './LandingPageView/css/photon.min.css'
 
-	export default{
-		name:'tool-bar',
-		data(){
-			return{
-				isActive: false,
-				s2t: true
-			}
+<script>
+import {mapGetters, mapMutations, mapActions} from 'vuex'
+import './LandingPageView/css/photon.min.css'
+
+export default{
+	name:'tool-bar',
+	computed: mapGetters([
+    'getFiles',
+    'getFileName',
+    'getMode',
+    'getpflag',
+		'getshowmodal',
+    'getFileAmount',
+    'getFiles',
+    'getContent'
+    ]),
+  methods: mapMutations({
+      decrement_main_counter:'DECREMENT_MAIN_COUNTER',
+      increment_main_counter:'INCREMENT_MAIN_COUNTER',
+      change_mode           :'CHANGE_MODE',
+      toggle_pflag          :'TOGGLE_PFLAG',
+      add_file              :'ADD_FILE',
+      change_selected       :'CHANGE_SELECTED',
+      remove_file           :'REMOVE_FILE',
+      remove_all_file       :'REMOVE_ALL_FILE',
+      update_content        :'UPDATE_CONTENT',
+    }),
+	data(){
+		return{
+			isActive: false,
+			s2t: true
 		}
 	}
+}
 </script>
+
 
 <style lang="stylus" scoped>
 .absolute

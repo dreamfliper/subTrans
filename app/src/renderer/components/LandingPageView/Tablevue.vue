@@ -1,16 +1,16 @@
 <template lang="pug">
   data-table#maintable(
-    show-index='', 
+    show-index,
     :data='getFiles', 
     :striped='true', 
     :height='viewheight'
     )
-
+    
     column(label='姓名', :width='200')
       template(scope='row')
         p.pointercursor.is-fullwidth(
           @click='showclicked(row.index)'
-        ) {{ row.name }}
+        ) {{ row.name }} {{row.index}}
 
     column(label='address')
       template(scope='row')
@@ -22,8 +22,9 @@
     a.button.is-success(@click='toggle_pflag') Success
 </template>
 
+
 <script>
-import {mapGetters, mapState, mapMutations, mapActions} from 'vuex'
+import {mapGetters, mapMutations, mapActions} from 'vuex'
 // let   files= [
 //   { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
 //   { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
@@ -65,6 +66,7 @@ export default {
   }
 console.log('tablevue debug message:'+window)
 </script>
+
 
 <style scoped>
 *{

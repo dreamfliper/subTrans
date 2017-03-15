@@ -11,7 +11,16 @@ mapMutations([
    'REMOVE_ALL_FILE',
    'UPDATE_CONTENT',
  ])
-
+mapGetters([
+    'getFiles',
+    'getFileName',
+    'mainCounter',
+    'getMode',
+    'getpflag',
+    'getFileAmount',
+    'getFiles',
+    'getContent'
+  ])
 document.ondragover = document.ondrop = (ev) => {
   ev.preventDefault()
 }
@@ -20,17 +29,18 @@ document.body.ondrop = (ev) => {
   ev.preventDefault()
   for(var index in ev.dataTransfer.files){
     if (index !== 'length' && index!=='item') {
+      store.commit('INCREMENT_MAIN_COUNTER')
       store.commit('ADD_FILE',{
+        index:store.getters.mainCounter,
         name:ev.dataTransfer.files[index].name,
         add :ev.dataTransfer.files[index].path,
-        content:''})
-      store.commit('CHANGE_SELECTED',2)
+        content:'.'})
       // store.files.push(
       //   {name:ev.dataTransfer.files[index].name,
       //     add:ev.dataTransfer.files[index].path,
       //    text:''})
       getAsText(ev.dataTransfer.files[index])
-      console.log('file'+index+'finished')
+      console.log('file '+store.getters.getmainCounter+' finished')
     }
   }
 }
@@ -58,7 +68,7 @@ function updateProgress(evt) {
 }
 
 function loaded(evt) {
-  console.log(evt.currentTarget.result)
+  // console.log(evt.currentTarget.result)
   store.commit('UPDATE_CONTENT',evt.currentTarget.result)
   // store.files[totalfiles].text=evt.currentTarget.result
   // totalfiles++

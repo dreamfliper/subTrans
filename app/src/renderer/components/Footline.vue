@@ -7,6 +7,7 @@
 	      | Save
 </template>
 
+
 <script>
   import './LandingPageView/css/photon.min.css'
 
@@ -14,6 +15,7 @@
 		name:'foot-line'
 	}
 </script>
+
 
 <style scoped>
 .btn {
