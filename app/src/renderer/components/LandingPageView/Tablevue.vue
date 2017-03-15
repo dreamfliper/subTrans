@@ -1,22 +1,29 @@
-<template>
-  <data-table show-index id="maintable" :data="getFiles" :striped=true :height="viewheight">
-    <column label="姓名" :width='200'>
-      <template scope="row">
-        <p class="pointercursor" is-fullwidth @click="change_selected(row.index)">{{ row.name }}</p>
-      </template>
-    </column>
-    <column label="address">
-      <template scope="row">
-        <p class="pointercursor" is-fullwidth @click="change_selected(row.index)">{{ row.add }}</p>
-      </template>
-    </column>
-  <tag type="primary">{{getpflag}}</tag>
-  <a class="button is-success" @click="toggle_pflag">Success</a>
-  </data-table>
+<template lang="pug">
+  data-table#maintable(
+    show-index='', 
+    :data='getFiles', 
+    :striped='true', 
+    :height='viewheight'
+    )
+
+    column(label='姓名', :width='200')
+      template(scope='row')
+        p.pointercursor.is-fullwidth(
+          @click='showclicked(row.index)'
+        ) {{ row.name }}
+
+    column(label='address')
+      template(scope='row')
+        p.pointercursor.is-fullwidth(
+          @click='showclicked(row.index)'
+        ) {{ row.add }}
+
+    tag(type='primary') {{getpflag}}
+    a.button.is-success(@click='toggle_pflag') Success
 </template>
 
 <script>
-import {mapGetters, mapState, mapMutations} from 'vuex'
+import {mapGetters, mapState, mapMutations, mapActions} from 'vuex'
 // let   files= [
 //   { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
 //   { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
@@ -33,7 +40,8 @@ export default {
     'getFiles',
     'getContent'
     ]),
-  methods: mapMutations({
+  methods: {
+    ...mapMutations({
       decrement_main_counter:'DECREMENT_MAIN_COUNTER',
       increment_main_counter:'INCREMENT_MAIN_COUNTER',
       change_mode           :'CHANGE_MODE',
@@ -44,6 +52,10 @@ export default {
       remove_all_file       :'REMOVE_ALL_FILE',
       update_content        :'UPDATE_CONTENT',
     }),
+    ...mapActions([
+      'showclicked' 
+    ])
+  },
   data (){
     return {
         // dataSource2:files

@@ -7,3 +7,8 @@ export const decrementMain = ({ commit }) => {
 export const incrementMain = ({ commit }) => {
   commit(types.INCREMENT_MAIN_COUNTER)
 }
+
+export const showclicked = ({ commit },index) => {
+  commit(types.CHANGE_SELECTED,index)
+  commit(types.TOGGLE_PFLAG)
+}
