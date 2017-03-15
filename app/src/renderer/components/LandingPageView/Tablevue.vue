@@ -47,7 +47,7 @@ export default {
   data (){
     return {
         // dataSource2:files
-        viewheight:window.innerHeight-315
+        viewheight:window.innerHeight-320
       }
    }
   }
@@ -55,6 +55,9 @@ console.log('tablevue debug message:'+window)
 </script>
 
 <style scoped>
+*{
+  font-size: 16px;
+}
 .pointercursor{
   cursor: pointer;
 }

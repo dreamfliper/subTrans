@@ -13,10 +13,18 @@
 </template>
 
 <script>
+  import './LandingPageView/css/photon.min.css'
+
 	export default{
 		name:'foot-line'
 	}
 </script>
 
-<style src="./LandingPageView/css/photon.css" scoped>
+<style scoped>
+.btn {
+	font-size: 14px;
+}
+.btn .icon {
+	font-size: 17px;
+}
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div id="landing">
     <img src="./LandingPageView/assets/logo.png" alt="electron-vue">
-    <h1>Welcome.</h1>
     <tablevue></tablevue>
     <contentvue></contentvue>
     <versions></versions>
@@ -14,6 +13,7 @@
   import Versions from './LandingPageView/Versions'
   import Tablevue from './LandingPageView/Tablevue'
   import Contentvue from './LandingPageView/Contentvue'
+  import 'vue-blu/dist/css/vue-blu.min.css'
 
   export default {
     components: {

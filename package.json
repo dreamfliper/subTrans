@@ -50,6 +50,6 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "opencc": "^1.0.4"
+    "opencc": "=1.0.4"
   }
 }

@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import VueBlu from 'vue-blu'
 import OpenCC from 'opencc'
 import Electron from 'vue-electron'
-import 'vue-blu/dist/css/vue-blu.min.css'
 
 let opencc = new OpenCC("s2tw.json")
 
