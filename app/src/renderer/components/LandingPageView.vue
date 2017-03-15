@@ -1,11 +1,11 @@
-<template>
-  <div id="landing">
-    <img src="./LandingPageView/assets/logo.png" alt="electron-vue">
-    <tablevue></tablevue>
-    <contentvue></contentvue>
-    <versions></versions>
-    <links></links>
-  </div>
+<template lang="pug">
+  #landing
+    img(src='./LandingPageView/assets/logo.png', 
+    alt='electron-vue')
+    tablevue
+    contentvue
+    versions
+    links
 </template>
 
 <script>

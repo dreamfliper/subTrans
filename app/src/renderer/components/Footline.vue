@@ -1,15 +1,10 @@
-<template>
-	<footer id="footline" class="toolbar toolbar-footer">
-	  <div class="toolbar-actions">
-	    <button class="btn btn-default pull-left">
-	      Cancel
-	    </button>
-
-	    <button class="btn btn-primary pull-right">
-	      Save
-	    </button>
-	  </div>
-	</footer>
+<template lang="pug">
+	footer#footline.toolbar.toolbar-footer
+	  .toolbar-actions
+	    button.btn.btn-default.pull-left
+	      | Cancel
+	    button.btn.btn-primary.pull-right
+	      | Save
 </template>
 
 <script>
