@@ -6,14 +6,26 @@
 				button.btn.btn-default.btn-large.nocursor
 					.nocursor 簡
 				button.btn.btn-default.btn-large
-					.icon.icon-right-bold
+					.icon.icon-right-bold(
+						v-if="s2t",
+						@click="s2t=!s2t"
+					)
+					.icon.icon-left-bold(
+						v-if="!s2t",
+						@click="s2t=!s2t"
+					)
 				button.btn.btn-default.btn-large.nocursor
 					.nocursor 繁
-			button.btn.btn-default.btn-large.active
+
+			button.btn.btn-default.btn-large(
+				:class="{ active: isActive }",
+				@click="isActive=!isActive"
+			)
 				|激光
 				|
-				span.icon.icon-arrows-ccw.icon-text
+				.icon.icon-arrows-ccw.icon-text
 				|雷射
+
 			button.btn.btn-default.btn-dropdown.absolute-right
 				.icon.icon-megaphone
 </template>
@@ -22,18 +34,24 @@
 	import './LandingPageView/css/photon.min.css'
 
 	export default{
-		name:'tool-bar'
+		name:'tool-bar',
+		data(){
+			return{
+				isActive: false,
+				s2t: true
+			}
+		}
 	}
 </script>
 
 <style lang="stylus" scoped>
 .absolute
 	&-right
-			position: absolute
-			right:5px
+		position: absolute
+		right:5px
 	&-left
-			position: absolute
-			left:5px
+		position: absolute
+		left:5px
 
 .flex-sapce-between{
 	display: flex;
