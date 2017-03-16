@@ -10,7 +10,7 @@
       template(scope='row')
         p.pointercursor.is-fullwidth(
           @click='showclicked(row.index)'
-        ) {{ row.name }} {{row.index}}
+        ) {{ row.name }}
 
     column(label='address')
       template(scope='row')
@@ -18,8 +18,6 @@
           @click='showclicked(row.index)'
         ) {{ row.add }}
 
-    tag(type='primary') {{getpflag}}
-    a.button.is-success(@click='toggle_pflag') Success
 </template>
 
 
@@ -60,7 +58,7 @@ export default {
   data (){
     return {
         // dataSource2:files
-        viewheight:window.innerHeight-320
+        viewheight:window.innerHeight-280
       }
    }
   }

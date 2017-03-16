@@ -34,13 +34,10 @@ document.body.ondrop = (ev) => {
         index:store.getters.mainCounter,
         name:ev.dataTransfer.files[index].name,
         add :ev.dataTransfer.files[index].path,
-        content:'.'})
-      // store.files.push(
-      //   {name:ev.dataTransfer.files[index].name,
-      //     add:ev.dataTransfer.files[index].path,
-      //    text:''})
+        content:'.'
+      })
       getAsText(ev.dataTransfer.files[index])
-      console.log('file '+store.getters.getmainCounter+' finished')
+      console.info('file '+store.getters.mainCounter+' finished')
     }
   }
 }
@@ -68,15 +65,13 @@ function updateProgress(evt) {
 }
 
 function loaded(evt) {
-  // console.log(evt.currentTarget.result)
+  console.debug(evt.currentTarget.result)
   store.commit('UPDATE_CONTENT',evt.currentTarget.result)
-  // store.files[totalfiles].text=evt.currentTarget.result
-  // totalfiles++
 }
 
 function errorHandler(evt) {
   if(evt.target.error.name == "NotReadableError") {
     // The file could not be read
-    console.log(evt.target.error)
+    console.error(evt.target.error)
   }
 }
