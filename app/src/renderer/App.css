@@ -3,13 +3,7 @@
 html,
 body { height: 100%; }
 
-#landing{
-  display: flex;
-  flex-direction: column;
-}
-
 body {
-  // align-content: stretch;
   font-size: 16px;
   background:
     radial-gradient(
@@ -19,6 +13,5 @@ body {
     );
   background-position: center;
   font-family: Lato, Helvetica, sans-serif;
-  // justify-content: center;
   text-align: center;
 }

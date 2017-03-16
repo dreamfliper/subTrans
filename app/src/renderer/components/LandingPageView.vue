@@ -27,7 +27,9 @@
 
 
 <style scoped>
-  #landing{
-    align-self:stretch;
-  }
+#landing{
+  align-self:stretch;
+  display: flex;
+  flex-direction: column;
+}
 </style>
