@@ -1,14 +1,14 @@
 import * as types from '../mutation-types'
 
 const state = {
-  main: 1,
+  main: -1,
   selected: 0,
   mode: 's2tw',
   pflag: false,
   showmodal: false,
   files: [
-    { index:0 ,name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
-    { index:1 ,name: 'Learn Vue' ,add:'sample2',content:'sample2'},
+    // { index:0 ,name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
+    // { index:1 ,name: 'Learn Vue' ,add:'sample2',content:'sample2'},
   ]
 }
 

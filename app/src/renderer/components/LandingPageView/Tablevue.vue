@@ -20,6 +20,7 @@
         ) {{ row.add }}
   
   .dropzone#dropzone(v-else) 拖曳檔案到此處
+
 </template>
 
 
@@ -56,7 +57,7 @@ export default {
   },
   data (){
     return {
-        viewheight:window.innerHeight-280
+        viewheight:window.innerHeight-250
       }
    }
   }
@@ -72,16 +73,18 @@ console.log('tablevue debug message:'+window)
   cursor: pointer;
 }
 #maintable{
-  margin: 0 5%;
+  margin: 5% 5% 0 5%;
 }
 .dropzone {
   font-size: 40px;
   line-height:300px;
   margin:0px auto;
   width: 80%;
-  height: 320px;
+  height: 365px;
+  margin-top: 50px;
   margin-bottom: 10px;
   padding: 10px;
   border: dashed gray;
+  border-radius: 15px;
 }
 </style>

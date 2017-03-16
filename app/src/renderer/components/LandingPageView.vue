@@ -1,7 +1,5 @@
 <template lang="pug">
   #landing
-    img(src='./LandingPageView/assets/logo.png', 
-    alt='electron-vue')
     tablevue
     contentvue
     versions
@@ -29,10 +27,6 @@
 
 
 <style scoped>
-  img {
-    margin-top: -25px;
-    width: 450px;
-  }
   #landing{
     align-self:stretch;
   }

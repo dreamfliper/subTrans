@@ -3,10 +3,10 @@
 	  .toolbar-actions
 	    button.btn.btn-default.pull-left(
 				@click="remove_all_file"
-	    )
-	      | 清除全部
-	    button.btn.btn-primary.pull-right
-	      | 轉換並儲存
+	    ) 清除全部
+
+	    button.btn.btn-primary.pull-right 轉換並儲存
+	    
 </template>
 
 

@@ -1,34 +1,34 @@
 <template lang="pug">
 	header.toolbar.toolbar-header
-		h1.title Header with actions
+		h1.title MashingOpencc 批次轉換
 		.toolbar-actions.flex-sapce-between
 			.btn-group
 				button.btn.btn-default.btn-large.nocursor
 					.nocursor 簡
 				button.btn.btn-default.btn-large
-					.icon.icon-right-bold(
+					.icon.icon-right-bold.pointercursor(
 						v-if="getMode==='s2tw'",
 						@click="change_mode"
 					)
-					.icon.icon-left-bold(
+					.icon.icon-left-bold.pointercursor(
 						v-if="getMode==='tw2s'",
 						@click="change_mode"
 					)
 				button.btn.btn-default.btn-large.nocursor
 					.nocursor 繁
 
-			button.btn.btn-default.btn-large(
+			button.btn.btn-default.btn-large.pointercursor(
 				:class="{ active: getpflag }",
 				@click="toggle_pflag"
 			)
 				|激光
 				|
-				.icon.icon-arrows-ccw.icon-text
+				.icon.icon-arrows-ccw.icon-text.pointercursor
 				|雷射
 
 			button.btn.btn-default.btn-dropdown.absolute-right
 				.icon.icon-megaphone
-					
+
 </template>
 
 
@@ -78,6 +78,11 @@ export default{
 	justify-content: space-between;
 
 }
+.pointercursor{
+  cursor: pointer;
+}
+.title
+	font-size: 16px
 
 .active
 	color: #fff
@@ -88,6 +93,7 @@ export default{
 		color: #fff
 		
 .nocursor{cursor: not-allowed!important;}
+
 .btn 
 	font-size: 14px
 	& .icon
