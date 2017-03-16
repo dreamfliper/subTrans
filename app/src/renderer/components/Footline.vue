@@ -1,19 +1,25 @@
 <template lang="pug">
 	footer#footline.toolbar.toolbar-footer
 	  .toolbar-actions
-	    button.btn.btn-default.pull-left
-	      | Cancel
+	    button.btn.btn-default.pull-left(
+				@click="remove_all_file"
+	    )
+	      | 清除全部
 	    button.btn.btn-primary.pull-right
-	      | Save
+	      | 轉換並儲存
 </template>
 
 
 <script>
-  import './LandingPageView/css/photon.min.css'
+import {mapGetters, mapMutations, mapActions} from 'vuex'
+import './LandingPageView/css/photon.min.css'
 
-	export default{
-		name:'foot-line'
-	}
+export default{
+	name:'foot-line',
+	methods: mapMutations({
+		remove_all_file       :'REMOVE_ALL_FILE',
+	})
+}
 </script>
 
 

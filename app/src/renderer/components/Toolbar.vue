@@ -28,6 +28,7 @@
 
 			button.btn.btn-default.btn-dropdown.absolute-right
 				.icon.icon-megaphone
+					
 </template>
 
 
@@ -38,32 +39,26 @@ import './LandingPageView/css/photon.min.css'
 export default{
 	name:'tool-bar',
 	computed: mapGetters([
-    'getFiles',
-    'getFileName',
-    'getMode',
-    'getpflag',
+		'getFiles',
+		'getFileName',
+		'getMode',
+		'getpflag',
 		'getshowmodal',
-    'getFileAmount',
-    'getFiles',
-    'getContent'
-    ]),
-  methods: mapMutations({
-      decrement_main_counter:'DECREMENT_MAIN_COUNTER',
-      increment_main_counter:'INCREMENT_MAIN_COUNTER',
-      change_mode           :'CHANGE_MODE',
-      toggle_pflag          :'TOGGLE_PFLAG',
-      add_file              :'ADD_FILE',
-      change_selected       :'CHANGE_SELECTED',
-      remove_file           :'REMOVE_FILE',
-      remove_all_file       :'REMOVE_ALL_FILE',
-      update_content        :'UPDATE_CONTENT',
-    }),
-	data(){
-		return{
-			isActive: false,
-			s2t: true
-		}
-	}
+		'getFileAmount',
+		'getFiles',
+		'getContent'
+		]),
+	methods: mapMutations({
+		decrement_main_counter:'DECREMENT_MAIN_COUNTER',
+		increment_main_counter:'INCREMENT_MAIN_COUNTER',
+		change_mode           :'CHANGE_MODE',
+		toggle_pflag          :'TOGGLE_PFLAG',
+		add_file              :'ADD_FILE',
+		change_selected       :'CHANGE_SELECTED',
+		remove_file           :'REMOVE_FILE',
+		remove_all_file       :'REMOVE_ALL_FILE',
+		update_content        :'UPDATE_CONTENT',
+	})
 }
 </script>
 

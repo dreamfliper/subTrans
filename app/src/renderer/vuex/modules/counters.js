@@ -39,7 +39,7 @@ const mutations = {
   },
   [types.REMOVE_ALL_FILE] (state) {
     state.files.splice(0,state.files.length)
-    state.main=0
+    state.main = -1
   },
   [types.UPDATE_CONTENT] (state, payloadstr) {
     state.files[state.main].content=payloadstr
