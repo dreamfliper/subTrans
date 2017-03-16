@@ -9,7 +9,6 @@ const webpack = require('webpack')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-var AnyBarWebpackPlugin = require('anybar-webpack');
 
 let rendererConfig = {
   devtool: '#eval-source-map',
@@ -88,10 +87,7 @@ let rendererConfig = {
         ? path.resolve(__dirname, 'app/node_modules')
         : false,
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new AnyBarWebpackPlugin({
-            enableNotifications: true
-        })
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   output: {
     filename: '[name].js',
@@ -101,7 +97,7 @@ let rendererConfig = {
   resolve: {
     alias: {
       'components': path.join(__dirname, 'app/src/renderer/components'),
-      'renderer': path.join(__dirname, 'app/src/renderer'),
+      'renderer': path.join(__dirname, 'app/src/renderer')
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node'],
     modules: [

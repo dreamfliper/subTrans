@@ -11,7 +11,7 @@
       template(scope='row')
         p.pointercursor.is-fullwidth(
           @click='showclicked(row.index)'
-        ) {{ row.name }}
+        ) {{ row.name }} {{row.index}}
 
     column(label='address')
       template(scope='row')

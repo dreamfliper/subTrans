@@ -30,7 +30,7 @@ document.body.ondrop = (ev) => {
 	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
 			store.commit('ADD_FILE',{
-				index:index,
+				index:Number(store.getters.mainCounter)+Number(index)+1,
 				name :ev.dataTransfer.files[index].name,
 				add  :ev.dataTransfer.files[index].path,
 				content:'.'})
