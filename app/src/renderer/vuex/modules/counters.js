@@ -1,4 +1,6 @@
 import * as types from '../mutation-types'
+import OpenCC from 'opencc'
+import fs from 'fs'
 
 const state = {
   main: -1,
@@ -20,7 +22,7 @@ const mutations = {
     state.main++
   },
   [types.CHANGE_MODE] (state) {
-    state.mode=  state.mode==='s2tw' ? 'tw2s':'s2tw'
+    state.mode = (state.mode==='s2tw') ? 'tw2s':'s2tw'
   },
   [types.TOGGLE_PFLAG] (state) {
     state.pflag = !state.pflag
@@ -44,6 +46,20 @@ const mutations = {
   [types.UPDATE_CONTENT] (state, payloadstr) {
     state.files[state.main].content=payloadstr
   },
+  [types.SAVE_ALL_FILES] (state) {
+    state.files.forEach(function (file) {
+      let tmode = state.pflag ? state.mode+'p':state.mode
+      let opencc = new OpenCC(tmode+".json")
+      fs.writeFile(file.add, opencc.convertSync(file.content), function(err) {
+       if(err) {
+        return console.log(err);
+        }
+      console.info("The file was translated and saved!");
+      });
+    })
+    state.files.splice(0,state.files.length)
+    state.main = -1
+  }
 }
 
 export default {

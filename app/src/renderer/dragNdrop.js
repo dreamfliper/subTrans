@@ -27,17 +27,15 @@ document.ondragover = document.ondrop = (ev) => {
 
 document.body.ondrop = (ev) => {
 	ev.preventDefault()
-	for(var index in ev.dataTransfer.files){
+	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
-			store.commit('INCREMENT_MAIN_COUNTER')
 			store.commit('ADD_FILE',{
-				index:store.getters.mainCounter,
-				name:ev.dataTransfer.files[index].name,
-				add :ev.dataTransfer.files[index].path,
-				content:'.'
-			})
+				index:index,
+				name :ev.dataTransfer.files[index].name,
+				add  :ev.dataTransfer.files[index].path,
+				content:'.'})
 			getAsText(ev.dataTransfer.files[index])
-			console.info('file '+store.getters.mainCounter+' finished')
+			console.info('file '+index+' finished')
 		}
 	}
 }
@@ -46,14 +44,14 @@ document.ondragenter = (ev) =>{
 	if (event.target.id==='dropzone') {	
 		event.target.style.border = "solid";
 		event.target.innerHTML = "放開滑鼠";
-		}	
-	console.info(event.target)
+	}	
 }
+
 document.ondragleave = (ev) =>{
 	if (event.target.id==='dropzone') {	
 		event.target.style.border = "";
 		event.target.innerHTML = "拖曳檔案到此處";
-}
+	}
 }
 
 function getAsText(readFile) {
@@ -78,8 +76,9 @@ function updateProgress(evt) {
 }
 
 function loaded(evt) {
-	console.debug(evt.currentTarget.result)
+	store.commit('INCREMENT_MAIN_COUNTER')
 	store.commit('UPDATE_CONTENT',evt.currentTarget.result)
+	console.debug(store.getters.mainCounter)
 }
 
 function errorHandler(evt) {
