@@ -18,6 +18,7 @@
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "anybar-webpack": "^1.2.0",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.8.0",

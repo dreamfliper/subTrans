@@ -1,5 +1,6 @@
 <template lang="pug">
   data-table#maintable(
+    v-if='getFileAmount!==0',
     show-index,
     :data='getFiles', 
     :striped='true', 
@@ -17,20 +18,18 @@
         p.pointercursor.is-fullwidth(
           @click='showclicked(row.index)'
         ) {{ row.add }}
-
+  
+  .dropzone#dropzone(v-else) 拖曳檔案到此處
 </template>
 
 
 <script>
 import {mapGetters, mapMutations, mapActions} from 'vuex'
-// let   files= [
-//   { name: 'Learn JavaScript' ,add: 'sample1',content:'sample1'},
-//   { name: 'Learn Vue' ,add:'sample2',content:'sample2'},
-//   ]
 
 export default {
   name:'table-vue',
   computed: mapGetters([
+    'mainCounter',
     'getFiles',
     'getFileName',
     'getMode',
@@ -57,7 +56,6 @@ export default {
   },
   data (){
     return {
-        // dataSource2:files
         viewheight:window.innerHeight-280
       }
    }
@@ -76,7 +74,14 @@ console.log('tablevue debug message:'+window)
 #maintable{
   margin: 0 5%;
 }
-span{
-  width: inherit;
+.dropzone {
+  font-size: 40px;
+  line-height:300px;
+  margin:0px auto;
+  width: 80%;
+  height: 320px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: dashed gray;
 }
 </style>
