@@ -25,7 +25,6 @@
 
 <script>
 import {mapGetters, mapMutations, mapActions} from 'vuex'
-import resize from 'vue-resize-directive'
 
 export default {
   name:'table-vue',
