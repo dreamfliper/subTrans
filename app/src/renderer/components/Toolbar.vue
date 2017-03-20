@@ -83,6 +83,7 @@ export default{
 }
 .title
 	font-size: 16px
+	-webkit-app-region: drag
 
 .active
 	color: #fff
