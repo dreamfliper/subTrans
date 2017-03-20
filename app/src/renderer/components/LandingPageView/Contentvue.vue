@@ -1,6 +1,6 @@
 <template>
 	<modal title="Content Preview" transition="slideUp" :is-show="getshowmodal" :width="viewwidth" @close="TOGGLE_SHOWMODAL">
-		<h4>{{getFileName}}</h4>
+		<h4>{{validate()}}</h4>
 		<pre class="has-text-left">{{translatedcontent()}}</pre>
 	</modal>
 </template>
@@ -28,7 +28,18 @@ import OpenCC from 'opencc'
 			translatedcontent(){
 				let tmode = this.getpflag ? this.getMode+'p':this.getMode
 				let opencc = new OpenCC(tmode+".json")
-				return opencc.convertSync(this.getContent)
+				try{
+					return opencc.convertSync(this.getContent)
+				}catch(err){
+					console.log(err)
+				}
+			},
+			validate(){
+				try{
+					getFileName
+				}catch(err){
+					console.log(err)
+				}
 			},
 		 	...mapMutations([
 				'DECREMENT_MAIN_COUNTER',
