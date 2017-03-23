@@ -1,36 +1,25 @@
-# mashingopencc
+# subTrans
 
 > An electron-vue project
 
-Road map:
+**Screen shot**
 
-- [x] construct vuex
+**功能**
 
-- [x] test vuex
+* 批次對文字檔簡繁轉換
+* 支援預覽
+* 現代外觀
 
-- [x] start test dragNdrop
+**簡介**
 
-- [x] show content in console
+由於一直沒有看到一個現代設計外觀又好用的簡繁字幕轉換，因此動手作一個。使用了[Vue.js](vuejs.org)以及[Bulma](bulma.io)與[Photon](http://photonkit.com/)作為界面設計，以[electron](electron.atom.io)作為跨平台的容器。其中使用[electron-vue](https://github.com/SimulatedGREG/electron-vue)以及[Vue-Blu](https://chenz24.github.io/vue-blu/)加快開發速度。
 
-- [x] show content in presentVue
+## 使用
 
-- [x] link presentVue index with column
+1. 拖曳檔案至視窗中
+2. 點擊該列可以預覽
+3. 點擊`全部轉換`。__注意：考慮到使用流程順暢與失敗成本，轉換前不會警告覆蓋!__
 
-- [x] construct modal 
-
-- [x] add photon as tool bar
-
-- [ ] toggle mode and flag
-
-- [ ] clear all
-
-- [ ] remove selected
-
-- [ ] prettify hight
-
-        ​
-
-        ​
 
 ## Build Setup
 
