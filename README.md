@@ -2,7 +2,7 @@
 
 > An electron-vue project
 
-**Screen shot**
+**Screenshot**
 
 **功能**
 
