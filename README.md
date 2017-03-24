@@ -2,6 +2,9 @@
 
 > An electron-vue project
 
+**Screenshots**
+![empty_state](screenshot/empty_state.png) ![preview_state](screenshot/preview_state.png) ![table_state](screenshot/table_state.png)
+
 **功能**
 
 * 批次對文字檔簡繁轉換
@@ -15,11 +18,9 @@
 ## 使用
 
 1. 拖曳檔案至視窗中
-![empty_state](screenshot/empty_state.png)
 2. 點擊該列可以預覽
-![preview_state](screenshot/preview_state.png)
 3. 點擊`全部轉換`。__注意：考慮到使用流程順暢與失敗成本，轉換前不會警告覆蓋!__
-![table_state](screenshot/table_state.png)
+
 
 ## Build Setup
 
