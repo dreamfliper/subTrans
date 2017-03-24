@@ -15,17 +15,11 @@
 ## 使用
 
 1. 拖曳檔案至視窗中
-
 ![empty_state](screenshot/empty_state.png)
-
 2. 點擊該列可以預覽
-
-![empty_state](screenshot/table_state.png)
-
-
-3. 點擊`全部轉換`。__注意：考慮到使用流程順暢與失敗成本，轉換前不會警告覆蓋!__
-
 ![preview_state](screenshot/preview_state.png)
+3. 點擊`全部轉換`。__注意：考慮到使用流程順暢與失敗成本，轉換前不會警告覆蓋!__
+![table_state](screenshot/table_state.png)
 
 ## Build Setup
 
