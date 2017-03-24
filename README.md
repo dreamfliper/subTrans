@@ -3,7 +3,7 @@
 > An electron-vue project
 
 **Screenshots**
-![empty_state](screenshot/empty_state.png) ![preview_state](screenshot/preview_state.png) ![table_state](screenshot/table_state.png)
+![preview_state](screenshot/preview_state.png) ![table_state](screenshot/table_state.png)
 
 **功能**
 
