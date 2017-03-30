@@ -4,7 +4,7 @@
 
 **Screenshot**
 
-![preview_state](screenshot/preview_state.png) ![table_state](screenshot/table_state.png)
+![gif](http://i.imgur.com/U0xw99E.gif)
 
 **功能**
 
