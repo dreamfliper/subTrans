@@ -1,6 +1,6 @@
 <template lang="pug">
 	header.toolbar.toolbar-header
-		h1.title MashingOpencc 批次轉換
+		h1.title subTrans 批次轉換
 		.toolbar-actions.flex-sapce-between
 			.btn-group
 				button.btn.btn-default.btn-large.nocursor
