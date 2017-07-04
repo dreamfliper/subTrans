@@ -7,7 +7,8 @@
 				|  開啟編碼
 				div(slot="content")
 					menus
-						//- it seems :click can passing function without parameter, caused by vue-blu
+						//- div(@click="set_encode('UTF-8')") {{getEncode}}
+						//- it seems ":click" can only passing function without parameter, caused by vue-blu
 						//- https://github.com/vuejs/vue-touch/issues/16#issuecomment-252348624
 						menu-item(:click="setEncodeUTF8",:is-active="getEncode==='UTF-8'") UTF-8
 						menu-item(:click="setEncodeBIG5",:is-active="getEncode==='BIG5'") BIG5
