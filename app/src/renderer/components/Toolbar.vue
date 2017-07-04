@@ -82,9 +82,19 @@ export default{
 		},
 		setEncodeBIG5: function(){
 			this.set_encode('BIG5')
+			// dirty fix https://github.com/chenz24/vue-blu/blob/master/src/components/dropdown/Dropdown.vue
+			setTimeout(() => {
+				this.$refs.dropdown.hidePopper()
+        this.popper = null;
+      }, 300)
 		},
 		setEncodeGB2312: function(){
 			this.set_encode('GB2312')
+			// dirty fix https://github.com/chenz24/vue-blu/blob/master/src/components/dropdown/Dropdown.vue
+			setTimeout(() => {
+				this.$refs.dropdown.hidePopper()
+        this.popper = null;
+      }, 300)
 		},
 	}
 }
