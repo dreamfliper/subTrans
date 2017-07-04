@@ -2,7 +2,7 @@
 	header.toolbar.toolbar-header
 		h1.title subTrans 批次轉換
 		div.toolbar-actions.flex-sapce-between
-			dropdown.btn.btn-default.btn-dropdown.absolute-left
+			dropdown.btn.btn-default.btn-dropdown.absolute-left(ref='dropdown')
 				div.icon.icon-login 
 				|  開啟編碼
 				div(slot="content")
@@ -74,6 +74,11 @@ export default{
 		}),
 		setEncodeUTF8: function(){
 			this.set_encode('UTF-8')
+			// dirty fix https://github.com/chenz24/vue-blu/blob/master/src/components/dropdown/Dropdown.vue
+			setTimeout(() => {
+				this.$refs.dropdown.hidePopper()
+        this.popper = null;
+      }, 300)
 		},
 		setEncodeBIG5: function(){
 			this.set_encode('BIG5')

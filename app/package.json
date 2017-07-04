@@ -1,6 +1,6 @@
 {
   "name": "subTrans",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An electron-vue project",
   "main": "./dist/main.js",
   "dependencies": {
