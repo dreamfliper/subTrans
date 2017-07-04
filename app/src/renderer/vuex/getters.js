@@ -1,5 +1,6 @@
 export const mainCounter		= state => state.counters.main
 export const getMode				= state => state.counters.mode
+export const getEncode			= state => state.counters.encode
 export const getpflag				= state => state.counters.pflag
 export const getshowmodal		= state => state.counters.showmodal
 export const getSelected		= state => state.counters.selected

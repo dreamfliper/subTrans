@@ -36,7 +36,7 @@ import OpenCC from 'opencc'
 			},
 			validate(){
 				try{
-					getFileName
+					this.getFileName
 				}catch(err){
 					console.log(err)
 				}

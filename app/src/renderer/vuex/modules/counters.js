@@ -6,6 +6,7 @@ const state = {
   main: -1,
   selected: 0,
   mode: 's2tw',
+  encode: 'UTF-8',
   pflag: false,
   showmodal: false,
   files: [
@@ -23,6 +24,9 @@ const mutations = {
   },
   [types.CHANGE_MODE] (state) {
     state.mode = (state.mode==='s2tw') ? 'tw2s':'s2tw'
+  },
+  [types.SET_ENCODE] (state, encode) {
+    state.encode = encode
   },
   [types.TOGGLE_PFLAG] (state) {
     state.pflag = !state.pflag

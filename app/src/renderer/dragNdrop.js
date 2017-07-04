@@ -1,5 +1,6 @@
 import {mapGetters, mapState, mapMutations} from 'vuex'
 import store from 'renderer/vuex/store'
+import detectCharacterEncoding from 'detect-character-encoding'
 mapMutations([
 	'DECREMENT_MAIN_COUNTER',
 	'INCREMENT_MAIN_COUNTER',
@@ -16,6 +17,7 @@ mapGetters([
 	'getFileName',
 	'mainCounter',
 	'getMode',
+	'getEncode',
 	'getpflag',
 	'getFileAmount',
 	'getFiles',
@@ -55,8 +57,8 @@ document.ondragleave = (ev) =>{
 }
 
 function getAsText(readFile) {
-	var filebuffer = new FileReader()
-	filebuffer.readAsText(readFile)
+	let filebuffer = new FileReader()
+	filebuffer.readAsText(readFile, store.getters.getEncode)
 
 	// Handle progress, success, and errors
 	filebuffer.onprogress = updateProgress
@@ -67,7 +69,7 @@ function getAsText(readFile) {
 function updateProgress(evt) {
 	if (evt.lengthComputable) {
 		// evt.loaded and evt.total are ProgressEvent properties
-		var loaded = (evt.loaded / evt.total)
+		let loaded = (evt.loaded / evt.total)
 		if (loaded < 1) {
 			// Increase the prog bar length
 			style.width = (loaded * 200) + "px"
@@ -78,7 +80,7 @@ function updateProgress(evt) {
 function loaded(evt) {
 	store.commit('INCREMENT_MAIN_COUNTER')
 	store.commit('UPDATE_CONTENT',evt.currentTarget.result)
-	console.debug(store.getters.mainCounter)
+	console.log(store.getters.mainCounter)
 }
 
 function errorHandler(evt) {
