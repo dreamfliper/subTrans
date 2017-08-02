@@ -1,7 +1,10 @@
 <template>
-	<modal title="Content Preview" transition="slideUp" :is-show="getshowmodal" :width="viewwidth" @close="TOGGLE_SHOWMODAL">
-		<h4>{{validate()}}</h4>
+	<modal
+	title="Content Preview" transition="slideUp" 
+	:is-show="getshowmodal" :width="viewwidth" 
+	@close="TOGGLE_SHOWMODAL">
 		<pre class="has-text-left">{{translatedcontent()}}</pre>
+		<p slot="footer">{{validate()}} </p>
 	</modal>
 </template>
 
@@ -14,14 +17,11 @@ import OpenCC from 'opencc'
 		name: 'content-vue',
 		computed: { 
 			...mapGetters([
-				'getFiles',
 				'getFileName',
 				'getMode',
 				'getpflag',
 				'getshowmodal',
-				'getFileAmount',
 				'getContent',
-				'getSelected'
 			]),
 		},
 		methods: {
@@ -36,21 +36,13 @@ import OpenCC from 'opencc'
 			},
 			validate(){
 				try{
-					this.getFileName
+					return this.getFileName
 				}catch(err){
 					console.log(err)
 				}
 			},
 		 	...mapMutations([
-				'DECREMENT_MAIN_COUNTER',
-				'INCREMENT_MAIN_COUNTER',
-				'CHANGE_MODE',
-				'TOGGLE_PFLAG',
 				'TOGGLE_SHOWMODAL',
-				'ADD_FILE',
-				'REMOVE_FILE',
-				'REMOVE_ALL_FILE',
-				'UPDATE_CONTENT',
 			]),
 			slideUp() {
 				this.$modal.open({
@@ -70,5 +62,5 @@ import OpenCC from 'opencc'
 
 
 <style scoped>
-	
+
 </style>

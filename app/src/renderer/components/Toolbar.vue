@@ -49,28 +49,15 @@ import './LandingPageView/css/photon.min.css'
 export default{
 	name:'tool-bar',
 	computed: mapGetters([
-		'getFiles',
-		'getFileName',
 		'getMode',
 		'getEncode',
 		'getpflag',
-		'getshowmodal',
-		'getFileAmount',
-		'getFiles',
-		'getContent'
 		]),
 	methods: {
 		...mapMutations({
-			decrement_main_counter:'DECREMENT_MAIN_COUNTER',
-			increment_main_counter:'INCREMENT_MAIN_COUNTER',
 			change_mode           :'CHANGE_MODE',
 			set_encode            :'SET_ENCODE',
 			toggle_pflag          :'TOGGLE_PFLAG',
-			add_file              :'ADD_FILE',
-			change_selected       :'CHANGE_SELECTED',
-			remove_file           :'REMOVE_FILE',
-			remove_all_file       :'REMOVE_ALL_FILE',
-			update_content        :'UPDATE_CONTENT',
 		}),
 		setEncodeUTF8: function(){
 			this.set_encode('UTF-8')

@@ -15,3 +15,17 @@ body {
   font-family: Lato, Helvetica, 微軟正黑體, sans-serif;
   text-align: center;
 }
+
+.align-baseline .modal-card{
+  margin-top: 50px;
+}
+.modal-card-head{
+  padding: 5px
+}
+.modal-card-foot{
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  justify-content: center;
+  width: 100%;
+  white-space:nowrap;
+}

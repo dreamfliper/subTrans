@@ -35,30 +35,13 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   computed: mapGetters([
-    'mainCounter',
-    'getFiles',
-    'getFileName',
-    'getMode',
-    'getpflag',
     'getFileAmount',
     'getFiles',
-    'getContent'
     ]),
   methods: {
     onResize(event){
       this.viewheight=window.innerHeight-250
     },
-    ...mapMutations({
-      decrement_main_counter:'DECREMENT_MAIN_COUNTER',
-      increment_main_counter:'INCREMENT_MAIN_COUNTER',
-      change_mode           :'CHANGE_MODE',
-      toggle_pflag          :'TOGGLE_PFLAG',
-      add_file              :'ADD_FILE',
-      change_selected       :'CHANGE_SELECTED',
-      remove_file           :'REMOVE_FILE',
-      remove_all_file       :'REMOVE_ALL_FILE',
-      update_content        :'UPDATE_CONTENT',
-    }),
     ...mapActions([
       'showclicked' 
     ])
@@ -79,18 +62,19 @@ export default {
   cursor: pointer;
 }
 #maintable{
-  height: calc(100vh - 215px);
-  margin: 5% 5% 0 5%;
+  height: calc(100vh - 115px);
+  margin: 0% 5% 0 5%;
+  overflow: scroll;
 }
 .dropzone {
   font-size: 40px;
   margin:0px auto;
-  line-height: calc(100vh - 260px);
+  line-height: calc(100vh - 215px);
   width: 80%;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  height: calc(100vh - 175px);
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 10px;
-  height: calc(100vh - 236px);
   border: dashed gray;
   border-radius: 15px;
 }
