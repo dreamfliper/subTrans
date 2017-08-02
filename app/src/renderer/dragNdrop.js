@@ -1,6 +1,5 @@
 import {mapGetters, mapState, mapMutations} from 'vuex'
 import store from 'renderer/vuex/store'
-import detectCharacterEncoding from 'detect-character-encoding'
 mapMutations([
 	'DECREMENT_MAIN_COUNTER',
 	'INCREMENT_MAIN_COUNTER',
