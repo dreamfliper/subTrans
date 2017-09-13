@@ -59,32 +59,12 @@ function getAsText(readFile) {
 	let filebuffer = new FileReader()
 	filebuffer.readAsText(readFile, store.getters.getEncode)
 
-	// Handle progress, success, and errors
-	filebuffer.onprogress = updateProgress
-	filebuffer.onload = loaded
-	filebuffer.onerror = errorHandler
-}
-
-function updateProgress(evt) {
-	if (evt.lengthComputable) {
-		// evt.loaded and evt.total are ProgressEvent properties
-		let loaded = (evt.loaded / evt.total)
-		if (loaded < 1) {
-			// Increase the prog bar length
-			style.width = (loaded * 200) + "px"
-		}
+	filebuffer.onload = evt => {
+		store.commit('INCREMENT_MAIN_COUNTER')
+		store.commit('UPDATE_CONTENT',evt.currentTarget.result)
 	}
-}
-
-function loaded(evt) {
-	store.commit('INCREMENT_MAIN_COUNTER')
-	store.commit('UPDATE_CONTENT',evt.currentTarget.result)
-	console.log(store.getters.mainCounter)
-}
-
-function errorHandler(evt) {
-	if(evt.target.error.name == "NotReadableError") {
-		// The file could not be read
-		console.error(evt.target.error)
+	filebuffer.onerror = evt =>	{
+		if(evt.target.error.name == "NotReadableError") 
+			console.error(evt.target.error)
 	}
 }
