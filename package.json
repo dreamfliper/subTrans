@@ -1,6 +1,6 @@
 {
   "name": "subTrans",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "An electron-vue project",
   "scripts": {
     "build": "node tasks/release.js",
