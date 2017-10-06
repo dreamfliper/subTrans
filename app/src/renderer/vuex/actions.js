@@ -9,6 +9,7 @@ export const incrementMain = ({ commit }) => {
 }
 
 export const showclicked = ({ commit },index) => {
-  commit(types.CHANGE_SELECTED,index)
+  commit(types.CHANGE_SELECTED, index)
+  console.log(index, 'selected')
   commit(types.TOGGLE_SHOWMODAL)
 }

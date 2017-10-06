@@ -21,9 +21,15 @@ const mutations = {
   },
   [types.INCREMENT_MAIN_COUNTER] (state) {
     state.main++
+    state.files.push({
+      index:'',
+      name :'',
+      add  :'',
+      content:''
+    })
   },
   [types.CHANGE_MODE] (state) {
-    state.mode = (state.mode==='s2tw') ? 'tw2s':'s2tw'
+    state.mode = (state.mode === 's2tw') ? 'tw2s':'s2tw'
   },
   [types.SET_ENCODE] (state, encode) {
     state.encode = encode
@@ -35,7 +41,10 @@ const mutations = {
     state.showmodal = !state.showmodal
   },
   [types.ADD_FILE] (state, payload) {
-    state.files.push(payload)//payload{name:'',add:'',content:''}
+    state.files[payload.index].index   = payload.index
+    state.files[payload.index].name    = payload.name
+    state.files[payload.index].add     = payload.add
+    state.files[payload.index].content = payload.content
   },
   [types.CHANGE_SELECTED] (state, index) {
     state.selected=index

@@ -30,19 +30,22 @@ document.ondragover = document.ondrop = (ev) => {
 
 document.body.ondrop = (ev) => {
 	ev.preventDefault()
+	for(let index of ev.dataTransfer.files){
+		store.commit('INCREMENT_MAIN_COUNTER')
+	}
 	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
-			getAsText(ev.dataTransfer.files[index], index)
+			getAsText(ev.dataTransfer.files[index], Number(index))
 				.then(resolve=>{
 					store.commit(
 						'ADD_FILE',{
-							index:Number(store.getters.mainCounter)+Number(resolve.index)+1,
+							index:resolve.index,
 							name :resolve.name,
 							add  :resolve.path,
 							content:resolve.content
 						})
-					store.commit('INCREMENT_MAIN_COUNTER')
 					console.info('file '+resolve.index+' finished')
+					console.log(store.getters.mainCounter)
 				})
 				.catch(err=>console.log(err))
 		}
@@ -67,7 +70,7 @@ function getAsText(readFile, index) {
 	return new Promise((resolve,reject) => {
 		let filebuffer = new FileReader()
 		filebuffer.readAsText(readFile, store.getters.getEncode)
-		filebuffer.onload = resolve({
+		filebuffer.onload = () => resolve({
 			content:filebuffer.result,
 			index:index,
 			name:readFile.name,
