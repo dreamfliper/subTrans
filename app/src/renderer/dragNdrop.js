@@ -1,5 +1,6 @@
 import {mapGetters, mapState, mapMutations} from 'vuex'
 import store from 'renderer/vuex/store'
+
 mapMutations([
 	'DECREMENT_MAIN_COUNTER',
 	'INCREMENT_MAIN_COUNTER',
@@ -22,6 +23,7 @@ mapGetters([
 	'getFiles',
 	'getContent'
 ])
+
 document.ondragover = document.ondrop = (ev) => {
 	ev.preventDefault()
 }
@@ -30,13 +32,19 @@ document.body.ondrop = (ev) => {
 	ev.preventDefault()
 	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
-			store.commit('ADD_FILE',{
-				index:Number(store.getters.mainCounter)+Number(index)+1,
-				name :ev.dataTransfer.files[index].name,
-				add  :ev.dataTransfer.files[index].path,
-				content:'.'})
-			getAsText(ev.dataTransfer.files[index])
-			console.info('file '+index+' finished')
+			getAsText(ev.dataTransfer.files[index], index)
+				.then(resolve=>{
+					store.commit(
+						'ADD_FILE',{
+							index:Number(store.getters.mainCounter)+Number(resolve.index)+1,
+							name :resolve.name,
+							add  :resolve.path,
+							content:resolve.content
+						})
+					store.commit('INCREMENT_MAIN_COUNTER')
+					console.info('file '+resolve.index+' finished')
+				})
+				.catch(err=>console.log(err))
 		}
 	}
 }
@@ -55,16 +63,16 @@ document.ondragleave = (ev) =>{
 	}
 }
 
-function getAsText(readFile) {
-	let filebuffer = new FileReader()
-	filebuffer.readAsText(readFile, store.getters.getEncode)
-
-	filebuffer.onload = evt => {
-		store.commit('INCREMENT_MAIN_COUNTER')
-		store.commit('UPDATE_CONTENT',evt.currentTarget.result)
-	}
-	filebuffer.onerror = evt =>	{
-		if(evt.target.error.name == "NotReadableError") 
-			console.error(evt.target.error)
-	}
+function getAsText(readFile, index) {
+	return new Promise((resolve,reject) => {
+		let filebuffer = new FileReader()
+		filebuffer.readAsText(readFile, store.getters.getEncode)
+		filebuffer.onload = resolve({
+			content:filebuffer.result,
+			index:index,
+			name:readFile.name,
+			path:readFile.path
+		})
+		filebuffer.onerror = reject
+	})
 }

@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
   data-table#maintable(
     v-if='getFileAmount!==0',
     show-index,
@@ -63,7 +63,6 @@ export default {
 }
 #maintable{
   height: calc(100vh - 115px);
-  margin: 0% 5% 0 5%;
   overflow: scroll;
 }
 .dropzone {

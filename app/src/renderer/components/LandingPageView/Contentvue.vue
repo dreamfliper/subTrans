@@ -31,7 +31,6 @@ import OpenCC from 'opencc'
 				try{
 					return opencc.convertSync(this.getContent)
 				}catch(err){
-					console.log(err)
 				}
 			},
 			validate(){
