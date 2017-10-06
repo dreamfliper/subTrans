@@ -30,12 +30,13 @@ document.ondragover = document.ondrop = (ev) => {
 
 document.body.ondrop = (ev) => {
 	ev.preventDefault()
+	let previousBase = store.getters.mainCounter+1
 	for(let index of ev.dataTransfer.files){
 		store.commit('INCREMENT_MAIN_COUNTER')
 	}
 	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
-			getAsText(ev.dataTransfer.files[index], Number(index))
+			getAsText(ev.dataTransfer.files[index], previousBase+Number(index))
 				.then(resolve=>{
 					store.commit(
 						'ADD_FILE',{
