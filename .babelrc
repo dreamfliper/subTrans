@@ -11,5 +11,5 @@
       ]
     }
   },
-  "plugins": ["transform-runtime"]
+  "plugins": ["transform-runtime", "transform-es2015-modules-commonjs"]
 }
