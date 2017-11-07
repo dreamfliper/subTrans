@@ -41,10 +41,9 @@ const mutations = {
     state.showmodal = !state.showmodal
   },
   [types.ADD_FILE] (state, payload) {
-    state.files[payload.index].index   = payload.index
-    state.files[payload.index].name    = payload.name
-    state.files[payload.index].add     = payload.add
-    state.files[payload.index].content = payload.content
+    Object.keys(payload).map( property => 
+      state.files[payload.index][property] = payload[property]
+    )
   },
   [types.CHANGE_SELECTED] (state, index) {
     state.selected=index
