@@ -3,6 +3,10 @@
 html,
 body { height: 100%; }
 
+*{
+  font-family: Lato, Helvetica, 微軟正黑體, sans-serif;
+}
+
 body {
   font-size: 16px;
   background:
@@ -12,7 +16,6 @@ body {
       rgba(229, 229, 229, .85) 100%
     );
   background-position: center;
-  font-family: Lato, Helvetica, 微軟正黑體, sans-serif;
   text-align: center;
 }
 
