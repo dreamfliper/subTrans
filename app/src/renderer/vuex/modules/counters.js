@@ -1,6 +1,8 @@
 import * as types from '../mutation-types'
 import OpenCC from 'opencc'
 import fs from 'fs'
+import iconv from'iconv-lite'
+
 
 const state = {
   main: -1,
@@ -34,6 +36,12 @@ const mutations = {
   [types.SET_ENCODE] (state, encode) {
     state.encode = encode
   },
+  [types.RELOAD_FILE] (state, encode) {
+    state.files
+      .map(file => fs.readFileSync(file.add))
+      .map(buffer => iconv.decode(buffer, state.encode))
+      .forEach((newContent, index) => state.files[index].content = newContent)
+  },
   [types.TOGGLE_PFLAG] (state) {
     state.pflag = !state.pflag
   },
@@ -62,12 +70,11 @@ const mutations = {
     state.files.map( file => {
       let tmode = state.pflag ? state.mode+'p':state.mode
       let opencc = new OpenCC(tmode+".json")
-      fs.writeFile(file.add, opencc.convertSync(file.content), err => {
-        if(err) console.log(err);
-        console.info("The file was translated and saved!");
-      });
+      fs.writeFile(file.add, opencc.convertSync(file.content), err => 
+        console.log(err ? err : 'The file was translated and saved!')
+      );
     })
-    state.files.splice(0,state.files.length)
+    state.files.splice(0, state.files.length)
     state.main = -1
   }
 }

@@ -37,30 +37,24 @@ document.body.ondrop = (ev) => {
 	for(let index in ev.dataTransfer.files){
 		if (index !== 'length' && index!=='item') {
 			getAsText(ev.dataTransfer.files[index], previousBase+Number(index))
-				.then(resolve=>{
-					store.commit(
-						'ADD_FILE',{
-							index:resolve.index,
-							name :resolve.name,
-							add  :resolve.path,
-							content:resolve.content
-						})
+				.then(({index, name, path, content})=>{
+					store.commit('ADD_FILE', {index, name, add:path, content})
 					console.info('file '+resolve.index+' finished')
 					console.log(store.getters.mainCounter)
 				})
-				.catch(err=>console.log(err))
+				.catch(console.log)
 		}
 	}
 }
 
-document.ondragenter = (ev) =>{
+document.ondragenter = (ev) => {
 	if (event.target.id==='dropzone') {	
 		event.target.style.border = "solid";
 		event.target.innerHTML = "放開滑鼠";
 	}	
 }
 
-document.ondragleave = (ev) =>{
+document.ondragleave = (ev) => {
 	if (event.target.id==='dropzone') {	
 		event.target.style.border = "";
 		event.target.innerHTML = "拖曳檔案到此處";
