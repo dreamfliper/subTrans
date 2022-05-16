@@ -28,8 +28,8 @@ header.toolbar.toolbar-header
 			button.btn.btn-large.nocursor(style='background-color:gainsboro') 繁
 
 		button.btn.btn-default.btn-large.pointercursor(
-			:class="{ active: getpflag }",
-			@click="toggle_pflag"
+			:class="{ active: getpFlag }",
+			@click="toggle_pFlag"
 		)
 			|激光
 			|
@@ -51,14 +51,14 @@ export default {
 	computed: mapGetters([
 		'getMode',
 		'getEncode',
-		'getpflag',
+		'getpFlag',
 	]),
 	methods: {
 		...mapMutations({
 			change_mode: 'CHANGE_MODE',
 			set_encode: 'SET_ENCODE',
 			reload_file: 'RELOAD_FILE',
-			toggle_pflag: 'TOGGLE_PFLAG',
+			toggle_pFlag: 'TOGGLE_PFLAG',
 		}),
 		setEncodeUTF8: function () {
 			this.set_encode('UTF-8')

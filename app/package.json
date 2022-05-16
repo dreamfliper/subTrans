@@ -7,7 +7,6 @@
     "iconv-lite": "^0.4.19",
     "install": "^0.10.1",
     "npm": "^5.0.4",
-    "opencc": "^1.1.2",
     "vue": "^2.1.10",
     "vue-blu": "^0.1.9",
     "vue-electron": "^1.0.6",
@@ -15,7 +14,8 @@
     "vuex": "^2.1.1"
   },
   "devDependencies": {
-    "electron-rebuild": "^1.5.7"
+    "electron-rebuild": "^1.5.7",
+    "wasm-opencc": "^1.0.2"
   },
   "author": "Henpai Hsu <dreamfliper@gmail.com>"
 }

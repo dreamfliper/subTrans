@@ -34,12 +34,12 @@ test('CHANGE_MODE', t => {
 });
 
 test('TOGGLE_PFLAG', t => {
-	const state={pflag:false}
+	const state={pFlag:false}
 	const {TOGGLE_PFLAG} = mutations
 	TOGGLE_PFLAG(state)
-	t.true(state.pflag)
+	t.true(state.pFlag)
 	TOGGLE_PFLAG(state)
-	t.false(state.pflag)
+	t.false(state.pFlag)
 });
 
 test('REMOVE_FILE', t => {
@@ -60,4 +60,3 @@ test('ADD_FILE', t => {
 	ADD_FILE(state, payload)
 	t.deepEqual(state.files[0], payload)
 });
-

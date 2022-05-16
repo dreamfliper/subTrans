@@ -1,7 +1,7 @@
 <template>
-	<modal title="Content Preview" transition="slideUp" :is-show="getshowmodal" :width="viewwidth"
-		@close="TOGGLE_SHOWMODAL">
-		<pre class="has-text-left">{{ translatedcontent() }}</pre>
+	<modal title="Content Preview" transition="slideUp" :is-show="getShowModal" :width="viewWidth"
+		@close="TOGGLE_SHOW_MODAL">
+		<pre class="has-text-left">{{ translatedContent() }}</pre>
 		<p slot="footer">{{ validate() }} </p>
 	</modal>
 </template>
@@ -9,7 +9,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import OpenCC from 'opencc'
+import { DictSource, Converter } from 'wasm-opencc'
 
 export default {
 	name: 'content-vue',
@@ -17,19 +17,18 @@ export default {
 		...mapGetters([
 			'getFileName',
 			'getMode',
-			'getpflag',
-			'getshowmodal',
+			'getPFlag',
+			'getShowModal',
 			'getContent',
 		]),
 	},
 	methods: {
-		translatedcontent() {
-			let tmode = this.getpflag ? this.getMode + 'p' : this.getMode
-			let opencc = new OpenCC(tmode + ".json")
-			try {
-				return opencc.convertSync(this.getContent)
-			} catch (err) {
-			}
+		async translatedContent() {
+      const dictSource = new DictSource(`${this.getMode}${this.getPFlag ? 'p' : ''}.json`)
+			const converter = new Converter(await dictSource.get())
+			const result = converter.convert(this.getContent)
+			converter.delete()
+			return result
 		},
 		validate() {
 			try {
@@ -39,7 +38,7 @@ export default {
 			}
 		},
 		...mapMutations([
-			'TOGGLE_SHOWMODAL',
+			'TOGGLE_SHOW_MODAL',
 		]),
 		slideUp() {
 			this.$modal.open({
@@ -51,7 +50,7 @@ export default {
 	},
 	data() {
 		return {
-			viewwidth: window.innerWidth - 20
+			viewWidth: window.innerWidth - 20
 		}
 	}
 }

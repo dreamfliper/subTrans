@@ -18,7 +18,7 @@ mapGetters([
 	'mainCounter',
 	'getMode',
 	'getEncode',
-	'getpflag',
+	'getpFlag',
 	'getFileAmount',
 	'getFiles',
 	'getContent'
@@ -48,14 +48,14 @@ document.body.ondrop = (ev) => {
 }
 
 document.ondragenter = (ev) => {
-	if (event.target.id==='dropzone') {	
+	if (event.target.id==='dropzone') {
 		event.target.style.border = "solid";
 		event.target.innerHTML = "放開滑鼠";
-	}	
+	}
 }
 
 document.ondragleave = (ev) => {
-	if (event.target.id==='dropzone') {	
+	if (event.target.id==='dropzone') {
 		event.target.style.border = "";
 		event.target.innerHTML = "拖曳檔案到此處";
 	}
