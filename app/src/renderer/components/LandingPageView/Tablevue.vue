@@ -1,33 +1,33 @@
 <template lang='pug'>
-  data-table#maintable(
-    v-if='getFileAmount!==0',
-    show-index,
-    :data='getFiles', 
-    :striped='true', 
-    )
-    
-    column(label='姓名', :width='200')
-      template(scope='row')
-        p.pointercursor.is-fullwidth(
-          @click='showclicked(row.index)'
-        ) {{ row.name }}
+data-table#maintable(
+  v-if='getFileAmount!==0',
+  show-index,
+  :data='getFiles',
+  :striped='true',
+  )
 
-    column(label='address')
-      template(scope='row')
-        p.pointercursor.is-fullwidth(
-          @click='showclicked(row.index)'
-        ) {{ row.add }}
-  
-  .dropzone#dropzone(v-else) 拖曳檔案到此處
+  column(label='姓名', :width='200')
+    template(scope='row')
+      p.pointercursor.is-fullwidth(
+        @click='showclicked(row.index)'
+      ) {{ row.name }}
+
+  column(label='address')
+    template(scope='row')
+      p.pointercursor.is-fullwidth(
+        @click='showclicked(row.index)'
+      ) {{ row.add }}
+
+.dropzone#dropzone(v-else) 拖曳檔案到此處
 
 </template>
 
 
 <script>
-import {mapGetters, mapMutations, mapActions} from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
-  name:'table-vue',
+  name: 'table-vue',
   ready: function () {
     window.addEventListener('resize', this.onResize)
   },
@@ -37,37 +37,40 @@ export default {
   computed: mapGetters([
     'getFileAmount',
     'getFiles',
-    ]),
+  ]),
   methods: {
-    onResize(event){
-      this.viewheight=window.innerHeight-250
+    onResize(event) {
+      this.viewheight = window.innerHeight - 250
     },
     ...mapActions([
-      'showclicked' 
+      'showclicked'
     ])
   },
-  data (){
+  data() {
     return {
-      }
-   }
+    }
   }
+}
 </script>
 
 
 <style scoped>
-*{
+* {
   font-size: 16px;
 }
-.pointercursor{
+
+.pointercursor {
   cursor: pointer;
 }
-#maintable{
+
+#maintable {
   height: calc(100vh - 115px);
   overflow: scroll;
 }
+
 .dropzone {
   font-size: 40px;
-  margin:0px auto;
+  margin: 0px auto;
   line-height: calc(100vh - 215px);
   width: 80%;
   height: calc(100vh - 175px);
