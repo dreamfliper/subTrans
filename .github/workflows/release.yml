@@ -1,5 +1,8 @@
 name: "publish"
-on: [pull_request]
+on:
+  push:
+    branches:
+      - release
 
 jobs:
   publish-tauri:
