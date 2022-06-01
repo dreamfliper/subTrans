@@ -7,8 +7,8 @@
     "distDir": "Set automatically by Vue CLI plugin"
   },
   "package": {
-    "productName": "subtrans-rusty",
-    "version": "0.1.0"
+    "productName": "subTrans",
+    "version": "0.3.0"
   },
   "tauri": {
     "allowlist": {
