@@ -15,7 +15,9 @@
 
 **簡介**
 
-由於一直沒有看到一個現代設計外觀又好用的簡繁字幕轉換，因此動手作一個。使用了[Vue.js](vuejs.org)以及[Bulma](bulma.io)與[Photon](http://photonkit.com/)作為界面設計，~~以[electron](electron.atom.io)作為跨平台的容器。其中使用[electron-vue](https://github.com/SimulatedGREG/electron-vue)~~以及[Vue-Blu](https://chenz24.github.io/vue-blu/)加快開發速度。現在用 [tauri](https://tauri.studio/) 作為容器重寫，底層改用 [simplecc](https://github.com/sorz/simplecc-rs)。大幅降低 bundle size 以及大幅加快開啟速度。
+由於一直沒有看到一個現代設計外觀又好用的簡繁字幕轉換，因此動手作一個。使用了[Vue.js](vuejs.org)以及[Bulma](bulma.io)與[Photon](http://photonkit.com/)作為界面設計， ~~以[electron](electron.atom.io)作為跨平台的容器。其中使用[electron-vue](https://github.com/SimulatedGREG/electron-vue)~~ 以及[Vue-Blu](https://chenz24.github.io/vue-blu/)加快開發速度。
+
+現在用 [tauri](https://tauri.studio/) 作為容器重寫，底層改用 [simplecc](https://github.com/sorz/simplecc-rs)。大幅降低 bundle size 以及大幅加快開啟速度。
 
 ## 使用
 
