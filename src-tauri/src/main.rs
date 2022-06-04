@@ -19,8 +19,7 @@ fn opencc(input: String, mode: String) -> String {
   let dict: &Dict = match mode.as_str() {
     "s2twp" => &dicts::S2TWP,
     "s2tw" => &dicts::S2TW,
-    "tw2s" => &dicts::T2S,
-    "tw2sp" => &dicts::T2S,
+    "tw2s" | "tw2sp" => &dicts::T2S,
     _ => &dicts::S2TWP
   };
   return dict.replace_all(&input);
