@@ -1,8 +1,8 @@
 [package]
 name = "app"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "GUI for simple cc"
+authors = ["dreamfliper"]
 license = ""
 repository = ""
 default-run = "app"
@@ -16,9 +16,9 @@ simplecc = "0.2.2"
 tauri-build = { version = "1.5.1", features = [] }
 
 [dependencies]
-serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.5.4", features = ["api-all"] }
+serde_json = "1.0.115"
+serde = { version = "1.0.197", features = ["derive"] }
+tauri = { version = "1.6.1", features = ["api-all"] }
 
 [features]
 # by default Tauri runs in production mode
