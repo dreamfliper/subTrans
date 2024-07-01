@@ -1,6 +1,6 @@
 {
-  "name": "subTrans",
-  "version": "0.3.0",
+  "name": "sub-trans",
+  "version": "2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
