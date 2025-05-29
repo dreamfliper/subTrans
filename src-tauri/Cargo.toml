@@ -8,7 +8,6 @@ repository = ""
 default-run = "app"
 edition = "2021"
 rust-version = "1.57"
-simplecc = "0.2.2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -19,6 +18,7 @@ tauri-build = { version = "1.5.1", features = [] }
 serde_json = "1.0.115"
 serde = { version = "1.0.197", features = ["derive"] }
 tauri = { version = "1.6.1", features = ["api-all"] }
+opencc-rs = "0.3.0"
 
 [features]
 # by default Tauri runs in production mode
@@ -27,7 +27,3 @@ default = ["custom-protocol"]
 # this feature is used used for production builds where `devPath` points to the filesystem
 # DO NOT remove this
 custom-protocol = ["tauri/custom-protocol"]
-
-[dependencies.simplecc]
-version = "*"
-features = ["builtin_dicts"]

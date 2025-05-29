@@ -3,8 +3,7 @@
   windows_subsystem = "windows"
 )]
 
-use simplecc::Dict;
-use simplecc::dicts;
+use opencc_rs::{OpenCC, Config};
 
 fn main() {
   tauri::Builder::default()
@@ -16,11 +15,20 @@ fn main() {
 
 #[tauri::command]
 fn opencc(input: String, mode: String) -> String {
-  let dict: &Dict = match mode.as_str() {
-    "s2twp" => &dicts::S2TWP,
-    "s2tw" => &dicts::S2TW,
-    "tw2s" | "tw2sp" => &dicts::T2S,
-    _ => &dicts::S2TWP
+  let dict_config = match mode.as_str() {
+      "s2twp" => Config::S2TWP,
+      "s2tw" => Config::S2TW,
+      "tw2s" | "tw2sp" => Config::TW2S, // Using TW2S to align with simplecc's T2S default
+      _ => Config::S2TWP, // Default
   };
-  return dict.replace_all(&input);
+
+  let converter = match OpenCC::new(&[dict_config]) {
+      Ok(c) => c,
+      Err(e) => return format!("Failed to create OpenCC instance: {}", e),
+  };
+
+  match converter.convert(&input) {
+      Ok(s) => s,
+      Err(e) => format!("Failed to convert string: {}", e),
+  }
 }
